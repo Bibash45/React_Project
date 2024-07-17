@@ -1,0 +1,76 @@
+:root {
+  --red: #d01c28;
+  --gray: #2e2e2e;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 72px;
+  align-items: center;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+}
+.hero {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  height: 613px;
+  width: 1125px;
+}
+.hero-content {
+  width: 595px;
+  height: 613px;
+}
+.hero-content h1 {
+  font-size: 108px;
+  font-weight: 800;
+  line-height: 102px;
+  width: 595px;
+  height: 306px;
+  gap: 0px;
+  opacity: 0px;
+}
+.hero-content p {
+  font-size: 16px;
+  line-height: 24px;
+  width: 404px;
+  height: 91px;
+  gap: 0px;
+  opacity: 0px;
+}
+.hero-btn {
+  margin-right: 40px;
+}
+
+button {
+  all: unset;
+  padding: 6px 16px;
+  background: var(--red);
+  height: 32px;
+  color: white;
+  font-weight: 500;
+}
+#category {
+  all: unset;
+  padding: 6px 16px;
+  /* background: var(--red); */
+  height: 32px;
+  color: black;
+  font-weight: 500;
+  border: black 1px solid;
+}
+.shopping {
+  width: Hug (131px) px;
+  height: Hug (67px) px;
+  gap: 16px;
+  opacity: 0px;
+  margin-top: 40px;
+}
+.shopping .brand-icon{
+  margin-top: 20px;
+}
