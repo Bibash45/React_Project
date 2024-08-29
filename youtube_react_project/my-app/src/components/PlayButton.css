@@ -1,0 +1,21 @@
+button{
+    padding: 0.5em;
+    border-radius: 1em;
+    cursor: pointer;
+    font-size: small;
+}
+button:hover{
+    background-color: white;
+    color: black;
+}
+button.darkMode{
+    background-color: #333;
+    color: white;
+    border: 1px solid white;
+}
+button.lightMode{
+    background-color: whitesmoke;
+    color: black;
+    border: 1px solid black;
+
+}

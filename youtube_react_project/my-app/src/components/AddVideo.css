@@ -1,0 +1,23 @@
+input{
+    display: block;
+    margin: 1em;
+    margin-bottom: 10px;
+}
+button.b-darkMode{
+    background-color: #333;
+    color: white;
+    border: 1px solid white;
+}
+button.b-lightMode{
+    background-color: #ccc;
+    color: black;
+    border: 1px solid black;
+}
+.i-darkMode{
+    background-color: #333;
+    color: white;
+}
+.i-lightMode{
+    background-color: white;
+    color: black;
+}

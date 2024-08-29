@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel</title>
+  </head>
+  <style>
+    .box {
+      height: 300px;
+      width: 500px;
+      margin: auto;
+    }
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  </style>
+  <body>
+    <div class="box">
+      <img src="images/img1.jpg" alt="image" />
+    </div>
+    <script>
+      const imageArray = [
+        "img1.jpg",
+        "img2.jpg",
+        "img3.jpg",
+        "img4.jpg",
+        "img5.jpeg",
+      ];
+      const imageLength = imageArray.length;
+      let i = 4;
+      const image = document.querySelector("img");
+
+      const imageChange = () => {
+        i--;
+        // i = i % imageLength;
+        i = (i + imageLength) % imageLength;
+        image.src = `/images/${imageArray[i]}`;
+      };
+
+      setInterval(() => {
+        imageChange();
+      }, 2000);
+    </script>
+  </body>
+</html>
