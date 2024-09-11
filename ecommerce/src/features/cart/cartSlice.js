@@ -20,7 +20,7 @@ const cartSlice = createSlice({
   reducers: {
     addItem: (state, action) => {
       const { product } = action.payload;
-      const item = state.cartItems.find((i) => i.cartId === product.cartID);
+      const item = state.cartItems.find((i) => i.cartID === product.cartID);
       if (item) {
         item.amount += product.amount;
       } else {
@@ -39,22 +39,29 @@ const cartSlice = createSlice({
       return defaultState;
     },
     removeItem: (state, action) => {
-      const { cartID } = action.payload;
-      const product = state.cartItems.find((i) => i.cartId === cartID);
+      console.log(state);
 
-      state.cartItems = state.cartItems.filter((i) => i.cartId !== cartID);
+      const { cartID } = action.payload;
+      const product = state.cartItems.find((i) => i.cartID === cartID);
+
+      if (!product) {
+        toast.error("Item not found in the cart");
+        return;
+      }
+
+      state.cartItems = state.cartItems.filter((i) => i.cartID !== cartID);
 
       state.numItemsInCart -= product.amount;
       state.cartTotal -= product.price * product.amount;
 
       cartSlice.caseReducers.calculateTotals(state);
 
-      toast.success("Item removed from cart");
+      toast.error("Item removed from cart");
     },
     editItem: (state, action) => {
       const { cartID, amount } = action.payload;
 
-      const item = state.cartItems.find((i) => i.cartId === cartID);
+      const item = state.cartItems.find((i) => i.cartID === cartID);
       state.numItemsInCart += amount - item.amount;
       state.cartTotal += (amount - item.amount) * item.price;
       item.amount = amount;
